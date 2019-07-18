@@ -1,5 +1,5 @@
 const express = require('express');
-const bycrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const db = require('../models/login');
 const User = require('../models/users');
 
