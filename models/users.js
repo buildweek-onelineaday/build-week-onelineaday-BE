@@ -9,3 +9,5 @@ const findByUser = username => {
     .where({ username })
     .first();
 };
+
+module.exports = { getUsers, findByUser };
