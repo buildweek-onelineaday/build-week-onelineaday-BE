@@ -4,4 +4,4 @@ const addUser = user => {
   return db('users').insert(user);
 };
 
-module.exports = { addUser };
+module.exports = addUser;
