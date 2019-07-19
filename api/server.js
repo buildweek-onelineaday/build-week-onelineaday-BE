@@ -9,7 +9,6 @@ const postsRouter = require('../api/routes/postsRouter')
 const server = express();
 
 server.use(helmet());
-server.use(logger('dev'));
 server.use(express.json());
 server.use('/api/register', registerRouter);
 server.use('/api/login', loginRouter);
