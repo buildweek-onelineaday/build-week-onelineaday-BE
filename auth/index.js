@@ -57,7 +57,7 @@ const generateToken = (user) => {
     expiresIn: '1d',
   };
 
-  return jwt.sign(payload, secrets.jwtKey, options);
+  return jwt.sign(payload, jwtKey, options);
 }
 
 const authenticate = (req, res, next) => {
