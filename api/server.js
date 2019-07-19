@@ -1,6 +1,6 @@
 const express = require('express');
 const helmet = require('helmet');
-const logger = require('morgan');
+
 const registerRouter = require('../controllers/register');
 const loginRouter = require('../controllers/login');
 const usersRouter = require('../controllers/users');
