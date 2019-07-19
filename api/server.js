@@ -13,7 +13,7 @@ server.use(express.json());
 server.use('/api/register', registerRouter);
 server.use('/api/login', loginRouter);
 server.use('/api/users', usersRouter);
-server.use('/posts', postsRouter)
+server.use('/api/posts', postsRouter)
 
 server.get('/', (req, res) => {
   res.status(200).json({ message: 'API is Up' });
