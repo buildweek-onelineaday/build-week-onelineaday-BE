@@ -35,3 +35,54 @@ This documentation will cover all of the data models and endpoints which can be 
 | PUT          | /posts/:id        | Update Post Info By ID        |
 | DELETE       | /posts/:id        | Remove Post By ID             |
 | GET          | /posts/user/:id   | Return All Posts By User Id   |
+
+# Data Models
+
+## Authentication
+
+### Register
+
+* A __POST__ request to the `/register` endpoint expects to recieve an object as follows: 
+
+```javascript
+{
+    "username": "username",
+    "email": "email@address.com",
+    "password": "password",
+    "phone": "15555555555",
+    "birthdate": "01/24/1990"
+}
+```
+
+| Field        | Type      | Required   | Unique     |
+|:------------:|:---------:|:----------:|:----------:|
+| username     | String    |  true      | true       |
+| email        | String    |  true      | false      |
+| password     | String    |  true      | true       |
+| phone        | String    |  false     | false      |
+| birthdate    | Date      |  true      | false      |
+
+## Users
+
+* A __GET__ request to the `/users` endpoint will return an object as follows: 
+
+```javascript
+[
+    {
+        "id": 1,
+        "username": "username",
+        "email": "email@address.com",
+        "password": "password",
+        "phone": "15555555555",
+        "birthdate": "01/24/1990"
+    },
+    {
+        "id": 2,
+        "username": "username",
+        "email": "email@address.com",
+        "password": "password",
+        "phone": "15555555555",
+        "birthdate": "01/24/1990"
+    }
+]
+```
