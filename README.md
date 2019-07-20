@@ -130,3 +130,41 @@ This documentation will cover all of the data models and endpoints which can be 
     "user_id": 1
 }
 ```
+
+* A __PUT__ request to the `posts/:id` will expect to recieve an object as follows:
+
+```javascript
+
+{
+    "user_id": 1
+    "body": "Updated message"
+}
+
+```
+
+__NOTE:__ An object only containing the changed field is required, if the field is to remain the same it is not needed.
+
+* A __DELETE__ request to the `/posts/:id` will return the number of posts deleted (1 means it was deleted successfully)
+
+* A __GET__ request to the `/posts/user/:id` endpoint will return an object containing all posts by the user with the id: 
+
+```javascript
+
+[
+    {
+        "id": 2,
+        "post": "another test post",
+        "created_at": "2019-07-20 02:54:53",
+        "updated_at": "2019-07-20 02:54:53",
+        "user_id": 1
+    },
+    {
+        "id": 3,
+        "post": "this is an edited post",
+        "created_at": "2019-07-20 03:17:14",
+        "updated_at": "2019-07-20 03:17:14",
+        "user_id": 1
+    }
+]
+
+```
