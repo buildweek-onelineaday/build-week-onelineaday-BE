@@ -57,9 +57,9 @@ This documentation will cover all of the data models and endpoints which can be 
 | Field        | Type      | Required   | Unique     |
 |:------------:|:---------:|:----------:|:----------:|
 | username     | String    |  true      | true       |
-| email        | String    |  true      | false      |
-| password     | String    |  true      | true       |
-| phone        | String    |  false     | false      |
+| email        | String    |  true      | true       |
+| password     | String    |  true      | false      |
+| phone        | String    |  false     | true       |
 | birthdate    | Date      |  true      | false      |
 
 ## Users
@@ -85,4 +85,48 @@ This documentation will cover all of the data models and endpoints which can be 
         "birthdate": "01/24/1990"
     }
 ]
+```
+
+## Posts
+
+* A __GET__ request to the `/posts` endpoint will return an object containing all messages in database as follows:
+
+```javascript
+[
+    {
+        "id": 2,
+        "post": "another test post",
+        "created_at": "2019-07-20 02:54:53",
+        "updated_at": "2019-07-20 02:54:53",
+        "user_id": 1
+    },
+    {
+        "id": 1,
+        "post": "test post",
+        "created_at": "2019-07-20 02:54:41",
+        "updated_at": "2019-07-20 02:54:41",
+        "user_id": 2
+    }
+]
+```
+
+* A __POST__ request to the `/posts` endpoint will expect to recieve an object as follows:
+
+```javascript
+{
+    "user_id": 2
+    "post": "This is a post"
+}
+```
+
+* A __GET__ request to the `/posts/:id` endpoint will return an object containing the post matching that ID: 
+
+```javascript
+{
+    "id": 2,
+    "post": "another test post",
+    "created_at": "2019-07-20 02:54:53",
+    "updated_at": "2019-07-20 02:54:53",
+    "user_id": 1
+}
 ```
