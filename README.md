@@ -61,3 +61,28 @@ This documentation will cover all of the data models and endpoints which can be 
 | password     | String    |  true      | true       |
 | phone        | String    |  false     | false      |
 | birthdate    | Date      |  true      | false      |
+
+## Users
+
+* A __GET__ request to the `/users` endpoint will return an object as follows: 
+
+```javascript
+[
+    {
+        "id": 1,
+        "username": "username",
+        "email": "email@address.com",
+        "password": "password",
+        "phone": "15555555555",
+        "birthdate": "01/24/1990"
+    },
+    {
+        "id": 2,
+        "username": "username",
+        "email": "email@address.com",
+        "password": "password",
+        "phone": "15555555555",
+        "birthdate": "01/24/1990"
+    }
+]
+```
