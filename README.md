@@ -49,7 +49,7 @@ This documentation will cover all of the data models and endpoints which can be 
     "username": "username",
     "email": "email@address.com",
     "password": "password",
-    "phone_number": "15555555555",
+    "phone": "15555555555",
     "birthdate": "01/24/1990"
 }
 ```
@@ -59,5 +59,5 @@ This documentation will cover all of the data models and endpoints which can be 
 | username     | String    |  true      | true       |
 | email        | String    |  true      | false      |
 | password     | String    |  true      | true       |
-| phone_number | String    |  false     | false      |
+| phone        | String    |  false     | false      |
 | birthdate    | Date      |  true      | false      |
