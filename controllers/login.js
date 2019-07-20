@@ -12,7 +12,7 @@ loginRouter.use((req, res, next) => {
 });
 
 loginRouter.post('/', async (req, res) => {
-  let { username, password } = req.headers;
+  let { username, password } = req.body;
 
   try {
     let user = await User.findByUser(username);
