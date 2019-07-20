@@ -3,7 +3,7 @@
 module.exports = {
   development: {
     client: 'sqlite3',
-    connection: {filename: './data/devposts.sqlite3'},
+    connection: {filename: './data/oneLineDB.sqlite3'},
     migrations: {
       directory: './data/migrations'
     },
