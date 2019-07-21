@@ -19,7 +19,7 @@ loginRouter.post('/', async (req, res) => {
     console.log(user);
     if (user && bcrypt.compareSync(password, user.password)) {
       const token = auth.generateToken(user);
-      res.json({ message: `Greetings ${user.username}!`, your_token: token});
+      res.json({ message: `Greetings ${user.username}!`, your_token: token, user_id: user.id});
     } else {
       res.status(401).json({ message: `Incorrect credentials` });
     }
