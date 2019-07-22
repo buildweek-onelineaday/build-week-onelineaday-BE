@@ -39,12 +39,50 @@ describe('Router for Posts', () => {
                 .set('authorization', token)
                 .expect(200)
         })
-        it('returns a 404 when there are no posts', async () => {
+        it('should return 7 posts', () => {
+            request(server)
+                .get('/posts')
+                .set('authorization', token)
+                .expect('Content-Length', 7)
+        })
+        it('returns a 404 when there are no posts and user is authorized', async () => {
             await db('posts').truncate();
             request(server)
                 .get('/posts')
                 .set('authorization', token)
                 .expect(404)
+        })
+    })
+
+    describe('GET posts/:id', () => {
+        it('gives an error when there is no post by that ID', () => {
+            request(server)
+                .get('/posts/10')
+                .set('authorization', token)
+                .expect({ message: "No post with that ID" })
+        })
+        
+        it('returns the right post based on id', () => {
+            request(server)
+                .get('/posts/2')
+                .set('authorization', token)
+                .expect({
+                    "id": 2,
+                    "post": "lorem",
+                    "created_at": "2019-07-22 03:56:16",
+                    "updated_at": "2019-07-22 03:56:16",
+                    "user_id": 1
+                })
+        })
+    })
+
+    describe('POST /posts', () => {
+        it('gives an error if the new post is empty', () => {
+            request(server)
+                .post('/posts')
+                .set('authorization', token)
+                .send()
+                .expect({ message: "Please include request body" })
         })
     })
 })
