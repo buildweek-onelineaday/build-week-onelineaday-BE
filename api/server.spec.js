@@ -14,4 +14,10 @@ describe(`API GET`, () => {
 
         expect(res.body).toEqual({"message": 'API is Up'})
     })
+
+    it('should return a JSON object fron the index route', async () => {
+        const response = await request(server).get('/');
+  
+        expect(response.type).toEqual('application/json');
+    });
 })

@@ -8,22 +8,24 @@ module.exports = {
       directory: './data/migrations'
     },
     seeds: {
-      directory: './data/seeds/dev'
+      directory: './data/seeds'
     },
     useNullAsDefault: true
   },
 
-  test: {
-    client: 'pg',
-    connection: 'postgres://localhost/5000',
+  testing: {
+    client: 'sqlite3',
+    connection: {
+      filename: './data/test.db3',
+    },
+    useNullAsDefault: true,
     migrations: {
-      directory: './data/migrations'
+      directory: './data/migrations',
     },
     seeds: {
-      directory: './data/seeds/test'
-    },
-    useNullAsDefault: true
-  },
+      directory: './data/seeds',
+  }
+},
 
   production: {
     client: 'pg',
@@ -32,7 +34,7 @@ module.exports = {
       directory: './data/migrations'
     },
     seeds: {
-      directory: './data/seeds/production'
+      directory: './data/seeds'
     },
     useNullAsDefault: true
   }
