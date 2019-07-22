@@ -62,6 +62,24 @@ This documentation will cover all of the data models and endpoints which can be 
 | phone        | String    |  false     | true       |
 | birthdate    | Date      |  true      | false      |
 
+### Login
+
+* A __POST__ request to the `/login` endpoint expects to recieve an object as follows: 
+
+```javascript
+{
+    "username": "username",
+    "password": "password",
+}
+```
+
+| Field        | Type      | Required   | Unique     |
+|:------------:|:---------:|:----------:|:----------:|
+| username     | String    |  true      | true       |
+| password     | String    |  true      | false      |
+
+* The __POST__ request to `/login` will return a jwt and the user_id.
+
 ## Users
 
 * A __GET__ request to the `/users` endpoint will return an object as follows: 
