@@ -29,8 +29,8 @@ This documentation will cover all of the data models and endpoints which can be 
 
 | Request Type | Endpoint          | Description                   |
 |:------------:|:-----------------:|:-----------------------------:|
-| GET          | /posts            | Return All Messages           |
-| POST         | /posts            | Create New Message            |
+| GET          | /posts            | Return All Posts              |
+| POST         | /posts            | Create New Post               |
 | GET          | /posts/:id        | Return Post Info By ID        |
 | PUT          | /posts/:id        | Update Post Info By ID        |
 | DELETE       | /posts/:id        | Remove Post By ID             |
@@ -107,7 +107,7 @@ This documentation will cover all of the data models and endpoints which can be 
 
 ## Posts
 
-* A __GET__ request to the `/posts` endpoint will return an object containing all messages in database as follows:
+* A __GET__ request to the `/posts` endpoint will return an object containing all posts in database as follows:
 
 ```javascript
 [
@@ -155,7 +155,7 @@ This documentation will cover all of the data models and endpoints which can be 
 
 {
     "user_id": 1
-    "body": "Updated message"
+    "body": "Updated posts"
 }
 
 ```
