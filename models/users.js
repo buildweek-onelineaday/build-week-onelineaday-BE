@@ -1,11 +1,11 @@
 const db = require('../data/dbConfig');
 
 const getUsers = () => {
-  return db('users');
+  db('users');
 };
 
-const findByUser = username => {
-  return db('users')
+const findByUser = (username) => {
+  db('users')
     .where({ username })
     .first();
 };

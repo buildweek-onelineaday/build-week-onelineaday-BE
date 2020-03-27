@@ -8,16 +8,15 @@ const addUser = db;
 // const hash = auth;
 
 registerRouter.use((req, res, next) => {
-  console.log('registerRouter working');
   next();
 });
 
 registerRouter.post('/', async (req, res) => {
   try {
     const credentials = req.body;
-    //hash and salting password with bcrypt
+    // hash and salting password with bcrypt
     const hash = bcrypt.hashSync(credentials.password, 2);
-    //saving password value to hashed and salted password
+    // saving password value to hashed and salted password
     credentials.password = hash;
     const user = await addUser(credentials);
     res.status(201).json(user);

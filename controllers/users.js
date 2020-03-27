@@ -3,11 +3,10 @@ const db = require('../models/users');
 
 const userRouter = express.Router();
 
-const { getUsers, findByUser } = db;
-0.0;
+const { getUsers } = db;
+
 
 userRouter.use((req, res, next) => {
-  console.log(`hello from userrouter`);
   next();
 });
 
