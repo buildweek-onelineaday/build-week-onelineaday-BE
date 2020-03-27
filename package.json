@@ -8,7 +8,10 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "test": "jest --watch --verbose"
+    "test": "cross-env DB_ENV=testing jest --watch --verbose"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -18,7 +21,11 @@
     "express": "^4.17.1",
     "helmet": "^3.18.0",
     "jsonwebtoken": "^8.5.1",
+<<<<<<< HEAD
     "knex": "^0.20.4",
+=======
+    "knex": "^0.19.0",
+>>>>>>> da3e4dac0bbef4ca9811b1cbe24cbd1d1d4b6639
     "pg": "^7.11.0",
     "sqlite3": "^4.0.9"
   },

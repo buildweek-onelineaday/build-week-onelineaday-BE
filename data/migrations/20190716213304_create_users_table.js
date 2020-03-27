@@ -10,7 +10,7 @@ exports.up = (knex) => {
       .string('email', 255)
       .notNullable()
       .unique();
-    tbl.string('phone number').unique();
+    tbl.string('phone').unique();
     tbl.date('birthdate').notNullable();
   });
 };

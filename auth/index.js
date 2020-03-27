@@ -1,6 +1,12 @@
 const bcrypt = require('bcryptjs');
-
 const User = require('../models/users');
+const jwt = require('jsonwebtoken');
+
+const { jwtSecret } = require('../.config/secrets')
+
+const jwtKey = jwtSecret
+
+// const jwtKey = process.env.JWT_SECRET || 'add a .env file to root of project with the JWT_SECRET Variable'
 
 const hash = (req, res, next) => {
   // save credentials to object variable
